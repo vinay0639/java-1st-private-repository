@@ -31,6 +31,7 @@
                 <configuration>
                     <source>11</source>
                     <taget>11</taget>
+                    <release>11</release>
                 </configuration>
             </plugin>
         </plugins>
