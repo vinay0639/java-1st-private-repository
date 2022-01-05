@@ -3,7 +3,7 @@ package generics;
 public class NormalBox {
     private Object content;
 
-    public Object getContent(){
+    public Object getContent() {
         return content;
     }
 
