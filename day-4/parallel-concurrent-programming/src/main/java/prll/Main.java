@@ -1,6 +1,7 @@
 package prll;
 
 import java.util.ArrayList;
+import java.util.concurrent.*;
 import java.util.stream.IntStream;
 
 public class Main {
@@ -29,9 +30,37 @@ public class Main {
         }
     }
 
+    public void futures(){
+
+        ExecutorService service = Executors.newFixedThreadPool(5);
+
+        Future<String> task1 = service.submit(()->{
+            Thread.sleep(2500);
+            return "Hello World From Task 1";
+        });
+
+        Future<String> task2 = service.submit(()->{
+            Thread.sleep(5500);
+            return "Hello World From Task 2";
+        });
+
+        try{
+            if (!task1.isCancelled()){
+                System.out.println("Task Completed :"+ task1.get());
+            }
+            if (!task2.isCancelled()){
+                System.out.println("Task Completed :"+ task2.get());
+            }
+        } catch(InterruptedException | ExecutionException e){
+            e.printStackTrace();
+        }
+
+        service.shutdown();
+    }
+
     public static void main(String[] args) {
         Main main = new Main();
 
-        main.withoutStream();
+        main.futures();
     }
 }
