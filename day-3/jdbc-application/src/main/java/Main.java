@@ -22,6 +22,10 @@ public class Main {
             //  if(cnt > 0) {
             //    System.out.println("Employee Created Successfully");
             // }
+            //            service.find();
+
+            service.findEmployeeByName("abc");
+
 
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
