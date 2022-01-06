@@ -24,9 +24,9 @@ public class Main {
             // }
             //            service.find();
 
-            service.findEmployeeByName("abc");
+          //  service.findEmployeeByName("abc");
 
-
+            service.txnDemo(12, "mno", Date.valueOf(LocalDate.now()), true, 1);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {
