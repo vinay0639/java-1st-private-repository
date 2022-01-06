@@ -15,9 +15,11 @@ public class Connectivity {
                 "root",
                 "password"
         );
+        System.out.println("--- Connected to MySQL Successfully --");
     }
 
     public Connection getConnection() {
+
         return connection;
     }
 }
