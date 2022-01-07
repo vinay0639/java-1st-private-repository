@@ -1,6 +1,12 @@
 package factory;
 
-public abstract class CardFactory {
+public /*abstract*/ class CardFactory extends Factory {
+
+    private CardFactory(){}
+
+    public static CardFactory newInstance(){
+        return new CardFactory();
+    }
 
     public static CardProvider getCard(String bank) {
         if (bank.equals("pqr")) return new PqrCard();
