@@ -5,4 +5,14 @@
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean name="car" class="car.Car"/>
+
+     <bean name="driver" class="driver.Driver">
+         <constructor-arg ref = "car"/>
+     </bean>
+
+    <bean name="tempo" class="tempo.Tempo">
+        <property name="driver">
+            <ref bean = "driver"/>
+        </property>
+    </bean>
 </beans>
