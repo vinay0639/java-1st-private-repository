@@ -1,15 +1,19 @@
 import car.Car;
-import car.Driver;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Car car = new Car();
+        ApplicationContext context= new ClassPathXmlApplicationContext("beans.xml");
 
-        // Driver driver = new Driver(car);
+        Car car1 = (Car) context.getBean("car");
+        car1.setSpeed(100);
 
-        Driver driver = new Driver();
-        driver.setCar(car);
+        Class<Car> cls = Car.class;
+        Car car2 = context.getBean(cls);
+        System.out.println("car speed is "+ car2.getSpeed());
+
     }
 }
