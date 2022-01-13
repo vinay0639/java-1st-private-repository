@@ -4,6 +4,8 @@ import com.vin.bankservice.domain.BankAccount;
 import com.vin.bankservice.dto.AppResponse;
 import com.vin.bankservice.exception.InvalidAmountException;
 import com.vin.bankservice.service.BankService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +17,8 @@ import java.util.List;
 @RequestMapping("/bank")
 @RestController // = @Component
 public class BankController {
+
+    private final Logger logger = LoggerFactory.getLogger(BankController.class);
 
     @Autowired
     private BankService service;
