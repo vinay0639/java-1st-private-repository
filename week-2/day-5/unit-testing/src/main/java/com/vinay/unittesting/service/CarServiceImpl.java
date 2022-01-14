@@ -1,7 +1,10 @@
 package com.vinay.unittesting.service;
 
 import com.vinay.unittesting.domain.Car;
+import exception.InvalidIdException;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 public class CarServiceImpl implements CarService{
@@ -9,5 +12,12 @@ public class CarServiceImpl implements CarService{
     public Car saveCar(Car car) {
 
         return car;
+    }
+
+
+    @Override
+    public Optional<Car> findCarById(Long id) {
+        if(id <= 0) throw new InvalidIdException("Id must be positive : "+id);
+        return Optional.of(new Car());
     }
 }
