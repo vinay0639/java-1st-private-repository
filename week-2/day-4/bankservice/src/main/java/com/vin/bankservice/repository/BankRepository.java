@@ -21,4 +21,6 @@ public interface BankRepository extends JpaRepository<BankAccount, Long> {
     List<BankAccount> findByAcHldNmStartingWith(String prefix);
 
     List<BankAccount> findByStatusTrue();
+
+
 }

@@ -1,30 +1,32 @@
 package com.vin.bankservice.dto;
-public class AmountTransferDto {
-    private Long srcAc;
-    private Long dstAc;
-    private Double amt;
+ class TransferBalanceRequest {
+    private Long fromAccountNumber;
 
-    public Long getSrcAc() {
-        return srcAc;
+    private Long toAccountNumber;
+
+    private Double amount;
+
+    public Long getFromAccountNumber() {
+        return fromAccountNumber;
     }
 
-    public void setSrcAc(Long srcAc) {
-        this.srcAc = srcAc;
+    public void setFromAccountNumber(Long fromAccountNumber) {
+        this.fromAccountNumber = fromAccountNumber;
     }
 
-    public Long getDstAc() {
-        return dstAc;
+    public Long getToAccountNumber() {
+        return toAccountNumber;
     }
 
-    public void setDstAc(Long dstAc) {
-        this.dstAc = dstAc;
+    public void setToAccountNumber(Long toAccountNumber) {
+        this.toAccountNumber = toAccountNumber;
     }
 
-    public Double getAmt() {
-        return amt;
+    public Double getAmount() {
+        return amount;
     }
 
-    public void setAmt(Double amt) {
-        this.amt = amt;
+    public void setAmount(Double amount) {
+        this.amount = amount;
     }
 }
