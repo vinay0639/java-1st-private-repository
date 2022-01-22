@@ -16,29 +16,7 @@ public class DoctorServiceTests {
     @Autowired
     private DoctorServiceImpl service;
 
-    @DisplayName("Service : Car Not Null")
-    @Test
-    public void testDoctorSave(){
-        DoctorDto doctor = new DoctorDto();
-        doctor.setName("vinay");
-        doctor.setId(10L);
-        doctor.setSpec("dermatology");
-        doctor.setHsNm("Govt hospital");
-        doctor.setHsLoc("hyderabad");
-        doctor.setVisit(true);
 
-        DoctorDto resDoc = service.createDoctor(doctor);
-        Assertions.assertNotNull(resDoc);
-    }
-//
-//    @DisplayName("Service : Doctor by id : invalid")
-//    @Test
-//    public void testDoctorByInvalidId(){
-//        Assertions.assertThrows(
-//                InvalidIdException.class,
-//                ()-> service.deleteDoctor(5L)
-//        );
-//    }
 
     @DisplayName("service : Doctor by spec :")
     @Test
@@ -47,7 +25,12 @@ public class DoctorServiceTests {
         Assertions.assertNotNull(op.get(1));
     }
 
-
+    @DisplayName("sevice test: Doctor by locality")
+    @Test
+    public void testDoctorFindByloc(){
+        var op = service.findDoctorByLoc("banglore");
+        Assertions.assertNotNull(op.get(1));
+    }
 
 
     @DisplayName("Service : Doctors Count By Loc and Spec")
@@ -55,5 +38,12 @@ public class DoctorServiceTests {
     public void testDoctorsCountByLocAndSpec(){
         var op = service.countOfDoctorsByLocalityAndSpec("chenai", "orthopedics");
         Assertions.assertEquals(2L,op);
+    }
+
+    @DisplayName("service : Find All Doctor test")
+    @Test
+    public void testDoctorFindAll(){
+         var op = service.listOfAllDoctors();
+         Assertions.assertNotNull(op.get(1));
     }
 }

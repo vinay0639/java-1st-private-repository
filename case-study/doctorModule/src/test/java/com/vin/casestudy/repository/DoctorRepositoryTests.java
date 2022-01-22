@@ -20,7 +20,7 @@ public class DoctorRepositoryTests {
 
     @DisplayName("Doctor repo : creating Doctor")
     @Test
-    public void testCreateDoctor(){
+    public void testCreateDoctor() {
         var doctor = new Doctor();
         doctor.setId(100L);
         doctor.setName("vinay");
@@ -32,19 +32,19 @@ public class DoctorRepositoryTests {
         repository.save(doctor);
     }
 
-//    @DisplayName("Doctor repo : Deleting Doctor")
-//    @Test
-//    public void testDeleteDoctor(){
-//        Doctor doc = new Doctor();
-//
-//        repository.deleteById(1L);
-//    }
-//    @Test
-//    public void testDoctorUpdate(){
-//        Doctor doc = repository.findById(1L).get();
-//        doc.setName("vinay");
-//        repository.save(doc);
-//
-//        Assertions.assertEquals("vinay" , repository.findById(1L).get().getName());
-//    }
+
+    @DisplayName("Doctor repo : finding Doctor")
+    @Test
+    public void testFindDoctor() {
+        var doctor = new Doctor();
+        repository.findAll();
+    }
+
+    @DisplayName("Doctor repo : Delete Doctor")
+    @Test
+    public void testDoctorDelete() {
+        var doctor = new Doctor();
+        repository.deleteById(51L);
+    }
+
 }

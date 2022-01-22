@@ -41,25 +41,24 @@ public class ControllerDoctorTests {
         var re =template.postForEntity(url,doctor,Doctor.class);
         Assertions.assertEquals(HttpStatus.CREATED , re.getStatusCode());
     }
+
+
     @DisplayName("Get - Doctor - Checking Object Is non null")
     @Test
     public void testGetMethod(){
 
         String url = "http://"+"localhost"+":"+port+"/doctor";
 
-        Doctor doctor = template.getForObject(url , Doctor.class);
+        Doctor doctor = template.getForObject(url,Doctor.class);
 
         Assertions.assertNotNull(doctor);
     }
-//
-//    @DisplayName("GET - Doctor - Checking Status Code")
-//    @Test
-//    public void testGetStatusCode() {
-//        String url = "http://" + "localhost" +":" + port +"/doctor";
-//        ResponseEntity<Doctor> entity = template.getForEntity(url, Doctor.class);
-//        Assertions.assertEquals(
-//                HttpStatus.OK,
-//                entity.getStatusCode()
-//        );
-//    }
+
+    @DisplayName("Put - Doctor - deleting a  doctor")
+    @Test
+    public void testDeleteMethod(){
+        String url = "http://" + "localhost"+":"+port+"/doctor";
+        template.delete(url);
+    }
+
 }
