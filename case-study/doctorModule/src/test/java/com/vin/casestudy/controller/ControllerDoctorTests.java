@@ -54,11 +54,6 @@ public class ControllerDoctorTests {
         Assertions.assertNotNull(doctor);
     }
 
-    @DisplayName("Put - Doctor - deleting a  doctor")
-    @Test
-    public void testDeleteMethod(){
-        String url = "http://" + "localhost"+":"+port+"/doctor";
-        template.delete(url);
-    }
+
 
 }

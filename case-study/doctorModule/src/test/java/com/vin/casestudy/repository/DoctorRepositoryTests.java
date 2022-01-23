@@ -30,6 +30,8 @@ public class DoctorRepositoryTests {
         doctor.setVisit(true);
 
         repository.save(doctor);
+
+        Assertions.assertNotNull(doctor);
     }
 
 
@@ -38,13 +40,16 @@ public class DoctorRepositoryTests {
     public void testFindDoctor() {
         var doctor = new Doctor();
         repository.findAll();
+        Assertions.assertNotNull(doctor);
     }
 
-    @DisplayName("Doctor repo : Delete Doctor")
+
+    @DisplayName("Doctor repo : get by id")
     @Test
-    public void testDoctorDelete() {
-        var doctor = new Doctor();
-        repository.deleteById(51L);
+    public void testDoctorById(){
+        Doctor doc = new Doctor();
+        repository.getById(51L);
+        Assertions.assertNotNull(doc);
     }
 
 }

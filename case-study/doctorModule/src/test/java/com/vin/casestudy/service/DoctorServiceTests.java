@@ -37,7 +37,7 @@ public class DoctorServiceTests {
     @Test
     public void testDoctorsCountByLocAndSpec(){
         var op = service.countOfDoctorsByLocalityAndSpec("chenai", "orthopedics");
-        Assertions.assertEquals(2L,op);
+        Assertions.assertEquals(3L,op);
     }
 
     @DisplayName("service : Find All Doctor test")

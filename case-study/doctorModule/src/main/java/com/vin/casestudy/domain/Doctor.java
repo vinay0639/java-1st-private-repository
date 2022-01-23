@@ -33,7 +33,6 @@ public class Doctor {
     @Column( nullable = true, unique = false)
     private String hsLoc;
 
-    @NotEmpty
     @NotNull
     @Column( nullable = false)
     private Boolean visit;
