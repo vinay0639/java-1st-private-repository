@@ -149,7 +149,7 @@ public class DoctorServiceImpl implements DoctorService{
                 .collect(Collectors.toList());
 
         if(dto1.isEmpty()){
-            throw new NoDoctorsFoundException("No Visiting Doctors found for given specialization ");
+            throw new NoDoctorsFoundException("No Permanent Doctors found for given specialization ");
         }
         return dto1;
     }
@@ -182,7 +182,7 @@ public class DoctorServiceImpl implements DoctorService{
                 .collect(Collectors.toList());
 
         if(dto1.isEmpty()){
-            throw new NoDoctorsFoundException("No Visiting Doctors found for given specialization ");
+            throw new NoDoctorsFoundException("Doctors not yet available ");
         }
         return dto1;
     }
